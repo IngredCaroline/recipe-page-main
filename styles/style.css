@@ -1,0 +1,189 @@
+/*VARIÁVEIS E RESET*/
+:root {
+  /* Cores */
+  --primary-text: #302d2c;
+  --secondary-text: #5f574e;
+  --accent-color: #854632;
+  --highlight-color: #7b284f;
+  --light-background: #f3e6d8;
+  --white: #ffffff;
+  --border-color: #ddd;
+  
+  /* Espaçamentos */
+  --spacing-unit: 1rem;
+  --section-padding: 1.25rem;
+  
+  /* Tipografia */
+  --body-font: "Outfit", sans-serif;
+  --heading-font: "Young Serif", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--body-font);
+  color: var(--secondary-text);
+  line-height: 1.75;
+}
+
+/*ELEMENTOS BASE*/
+body {
+  background-color: var(--light-background);
+}
+
+h1, h2, h3 {
+  font-family: var(--heading-font);
+  color: var(--primary-text);
+}
+
+/*LAYOUT PRINCIPAL*/
+.container {
+  padding: 3.75rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.recipe {
+  background-color: var(--white);
+  border-radius: 1.25rem;
+  overflow: hidden;
+  padding: 2.5rem;
+}
+
+/*COMPONENTES DA RECEITA*/
+.recipeImage {
+  width: 100%;
+  height: 300px;
+  background-image: url(/assets/images/image-omelette.jpeg);
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.625rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  color: var(--primary-text);
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.recipe{
+  margin-bottom: 2rem;
+}
+
+/* SEÇÕES DA RECEITA*/
+section {
+  padding: var(--section-padding) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+
+.preparationTime {
+  background-color: #e889b630;
+  padding: 2rem;
+  border-radius: 0.3rem;
+  margin: 1.5rem 0;
+  
+}
+
+.preparationTime .subtitle {
+  color: var(--highlight-color);
+}
+
+/*ELEMENTOS DE LISTA */
+.ingredients,
+.instructions{
+  padding-left: 1.5rem;
+}
+
+.ingredients li {
+  padding: 0.5rem 0;
+  list-style-position: outside;
+}
+
+.instructions li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.instructions li::before {
+  color: var(--accent-color);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* TABELA NUTRICIONAL*/
+.nutrition{
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.nutrition th,
+.nutrition td{
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nutrition th,
+.nutrition td {
+  text-align: left;
+}
+
+.nutrition td {
+  text-align: right;
+  padding: 0.75rem 2rem;
+  
+}
+
+.nutrition td:last-child {
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/*DICAS EXTRAS*/
+.tips {
+  padding-bottom: 1.25rem;
+}
+
+/*MEDIA QUERIES (RESPONSIVO)*/
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .recipe {
+    padding: 1.5rem;
+  }
+  
+  .recipeImage {
+    height: 250px;
+  }
+  
+  .title {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recipeImage {
+    height: 200px;
+  }
+  
+  .instructions li {
+    padding-left: 1.5rem;
+  }
+}
